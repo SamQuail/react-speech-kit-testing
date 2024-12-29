@@ -14,11 +14,30 @@ declare module 'react-speech-kit' {
       voices: SpeechSynthesisVoice[];
     }
 
-    interface useSpeechSynthesisOptions {
+    interface UseSpeechSynthesisOptions {
       onEnd?: () => void;
+    }
+
+    interface ListenOptions {
+      interimResults: boolean;
+      lang: string;
+    }
+
+    interface UseSpeechRecognitionReturn {
+      listen: (options: ListenOptions) => void;
+      stop: () => void;
+      listening: boolean;
+      supported: boolean;
+
+    }
+
+    interface UseSpeechRecognitionOptions {
+      onEnd?: () => void;
+      onResult?: (result: SpeechRecognitionResult) => void;
     }
 
 
   
-    export function useSpeechSynthesis(options?: useSpeechSynthesisOptions): UseSpeechSynthesisReturn;
+    export function useSpeechSynthesis(options?: UseSpeechSynthesisOptions): UseSpeechSynthesisReturn;
+    export function useSpeechRecognition(options?: UseSpeechRecognitionOptions): UseSpeechRecognitionReturn;
   }
