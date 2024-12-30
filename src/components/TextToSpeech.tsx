@@ -7,7 +7,7 @@ const TextToSpeech = () => {
     const [pitch, setPitch] = useState(1);
     const [rate, setRate] = useState<number | undefined>(1);
     const [voiceIndex, setVoiceIndex] = useState(1);
-    const { speak, speaking, cancel, voices } = useSpeechSynthesis({
+    const { speak, speaking, cancel, voices, supported} = useSpeechSynthesis({
       onEnd: () => {
         console.log('Speech finished!');
       }
@@ -111,6 +111,8 @@ const TextToSpeech = () => {
             
           </Card>
           is speaking: {speaking ? "true" : "false"}
+          <br />
+          is supported: {supported ? "true" : "false"}
           
           </div>
     )

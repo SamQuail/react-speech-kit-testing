@@ -4,6 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import TextToSpeech from './components/TextToSpeech';
+import SpeechToText from './components/SpeechToText';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -58,7 +59,7 @@ function App() {
         <TextToSpeech />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        <SpeechToText />
       </CustomTabPanel>
     </Box>
     </div>

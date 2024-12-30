@@ -19,7 +19,7 @@ declare module 'react-speech-kit' {
     }
 
     interface ListenOptions {
-      interimResults: boolean;
+      interimResults?: boolean;
       lang: string;
     }
 
@@ -34,6 +34,7 @@ declare module 'react-speech-kit' {
     interface UseSpeechRecognitionOptions {
       onEnd?: () => void;
       onResult?: (result: SpeechRecognitionResult) => void;
+      onError?: (event: ErrorEvent) => void;
     }
 
 
